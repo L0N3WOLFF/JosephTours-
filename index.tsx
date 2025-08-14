@@ -7,6 +7,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import './index.css';
 
 // Busca el elemento raíz en el DOM.
 const rootElement = document.getElementById('root');
