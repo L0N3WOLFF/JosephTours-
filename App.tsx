@@ -19,7 +19,7 @@ import Footer from './components/Footer';
 import ReturnPolicy from './components/ReturnPolicy';
 import { AppProvider } from './contexts/AppContext';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     // AppProvider envuelve la aplicación para que todos los componentes
     // puedan acceder al contexto global.

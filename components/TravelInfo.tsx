@@ -9,7 +9,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../contexts/AppContext';
 
-const TravelInfo: React.FC = () => {
+const TravelInfo = () => {
   const { t } = useApp();
   const [isOpen, setIsOpen] = useState(false);
 

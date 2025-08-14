@@ -6,19 +6,13 @@
  */
 import React, { useEffect } from 'react';
 import { useApp } from '../contexts/AppContext';
-import type { Tour } from '../types';
 
-interface TourModalProps {
-  tour: Tour | null;
-  onClose: () => void;
-}
-
-const TourModal: React.FC<TourModalProps> = ({ tour, onClose }) => {
+const TourModal = ({ tour, onClose }) => {
   const { t } = useApp();
 
   // Efecto para cerrar el modal con la tecla 'Escape'.
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
+    const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
         onClose();
       }

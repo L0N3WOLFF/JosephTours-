@@ -10,10 +10,10 @@ import React, { useState, useMemo } from 'react';
 import { useApp } from '../contexts/AppContext';
 import GalleryModal from './GalleryModal';
 
-const Gallery: React.FC = () => {
+const Gallery = () => {
   const { t } = useApp();
   const [isOpen, setIsOpen] = useState(true); // Visible por defecto
-  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
   const galleryImages = useMemo(() => [
     { src: 'https://raw.githubusercontent.com/L0N3WOLFF/Testing_Images_Gallery/c062d59f76fe9861020b876bfea7028037318c98/Project-Tours/Galeria_01.jpg', alt: t('gallery_img1_alt'), caption: t('gallery_img1_caption') },
@@ -33,7 +33,7 @@ const Gallery: React.FC = () => {
     { src: 'https://raw.githubusercontent.com/L0N3WOLFF/Testing_Images_Gallery/c062d59f76fe9861020b876bfea7028037318c98/Project-Tours/Galeria_92.png', alt: t('gallery_img15_alt'), caption: t('gallery_img15_caption') },
   ], [t]);
 
-  const handleOpenModal = (index: number) => {
+  const handleOpenModal = (index) => {
     setSelectedImageIndex(index);
   };
 
@@ -44,7 +44,7 @@ const Gallery: React.FC = () => {
   const handlePrev = () => {
     if (selectedImageIndex !== null) {
       setSelectedImageIndex((prevIndex) =>
-        prevIndex === 0 ? galleryImages.length - 1 : prevIndex! - 1
+        prevIndex === 0 ? galleryImages.length - 1 : prevIndex - 1
       );
     }
   };
@@ -52,7 +52,7 @@ const Gallery: React.FC = () => {
   const handleNext = () => {
     if (selectedImageIndex !== null) {
       setSelectedImageIndex((prevIndex) =>
-        (prevIndex! + 1) % galleryImages.length
+        (prevIndex + 1) % galleryImages.length
       );
     }
   };

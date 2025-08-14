@@ -8,9 +8,8 @@
 import React, { useState, useMemo } from 'react';
 import { useApp } from '../contexts/AppContext';
 import TourModal from './TourModal'; 
-import type { Tour } from '../types';
 
-const TripPlanner: React.FC = () => {
+const TripPlanner = () => {
     const { t } = useApp();
     
     // Define los filtros disponibles. Las claves de traducción deben existir en translations.ts
@@ -24,10 +23,10 @@ const TripPlanner: React.FC = () => {
     // Estado para el filtro activo. Por defecto es 'Todos'.
     const [activeFilter, setActiveFilter] = useState(filters[0]);
     // Estado para gestionar el tour seleccionado y la visibilidad del modal.
-    const [selectedTour, setSelectedTour] = useState<Tour | null>(null);
+    const [selectedTour, setSelectedTour] = useState(null);
 
     // Memoriza la lista de todos los tours para evitar recrearla en cada renderizado.
-    const allTours: Tour[] = useMemo(() => [
+    const allTours = useMemo(() => [
         // Pasadías
         {
           id: 'pasadia1',
@@ -128,7 +127,7 @@ const TripPlanner: React.FC = () => {
     }, [activeFilter, allTours, t]);
 
     // Abre el modal con la información del tour seleccionado.
-    const handleOpenModal = (tour: Tour) => {
+    const handleOpenModal = (tour) => {
         setSelectedTour(tour);
     };
 

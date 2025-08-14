@@ -9,7 +9,7 @@
 import React from 'react';
 import { useApp } from '../contexts/AppContext';
 
-const Contact: React.FC = () => {
+const Contact = () => {
   const { t } = useApp();
 
   return (

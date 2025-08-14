@@ -10,7 +10,7 @@
 import React from 'react';
 import { useApp } from '../contexts/AppContext';
 
-const AboutUs: React.FC = () => {
+const AboutUs = () => {
   const { t } = useApp();
 
   // Array que define el contenido de las tarjetas de detalles.

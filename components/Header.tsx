@@ -9,7 +9,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useApp } from '../contexts/AppContext';
 
-const Header: React.FC = () => {
+const Header = () => {
   // Hook de contexto para acceder a traducciones y estado global.
   const { t, isScrolled, setIsScrolled } = useApp();
   // Estado para controlar la visibilidad del menú en dispositivos móviles.
@@ -39,7 +39,7 @@ const Header: React.FC = () => {
    * Gestiona el clic en los enlaces de navegación para realizar un desplazamiento suave.
    * @param e Evento de clic del ratón.
    */
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleNavClick = (e) => {
     e.preventDefault();
     const targetId = e.currentTarget.getAttribute('href');
     if (!targetId) return;

@@ -9,7 +9,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useApp } from '../contexts/AppContext';
 
-const Hero: React.FC = () => {
+const Hero = () => {
   const { t } = useApp();
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
    * Navega a una diapositiva específica al hacer clic en los puntos de navegación.
    * @param slideIndex El índice de la diapositiva a mostrar.
    */
-  const goToSlide = (slideIndex: number) => {
+  const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
   };
 

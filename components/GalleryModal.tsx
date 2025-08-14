@@ -8,17 +8,7 @@
  */
 import React, { useEffect } from 'react';
 
-// Define la interfaz de las propiedades que espera el componente.
-interface GalleryModalProps {
-  isOpen: boolean;       // Controla si el modal está visible.
-  onClose: () => void;     // Función para cerrar el modal.
-  onPrev: () => void;      // Función para mostrar la imagen anterior.
-  onNext: () => void;      // Función para mostrar la imagen siguiente.
-  imageSrc: string;      // URL de la imagen a mostrar.
-  caption: string;       // Leyenda de la imagen.
-}
-
-const GalleryModal: React.FC<GalleryModalProps> = ({
+const GalleryModal = ({
   isOpen,
   onClose,
   onPrev,
@@ -31,7 +21,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({
     // Si el modal no está abierto, no se hace nada.
     if (!isOpen) return;
 
-    const handleKeyDown = (e: KeyboardEvent) => {
+    const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();   // Cierra con la tecla Escape.
       if (e.key === 'ArrowLeft') onPrev(); // Va a la imagen anterior con la flecha izquierda.
       if (e.key === 'ArrowRight') onNext();// Va a la imagen siguiente con la flecha derecha.

@@ -9,7 +9,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../contexts/AppContext';
 
-const ReturnPolicy: React.FC = () => {
+const ReturnPolicy = () => {
   const { t } = useApp();
   // Estado para controlar si la sección está abierta o cerrada.
   const [isOpen, setIsOpen] = useState(false);
